@@ -1,0 +1,32 @@
+#importar biblioteca
+import random
+
+#salvar em uma variável, um número aleatório entre 1 e 10
+magic_number = random.randint(1, 10)
+# print(magic_number)
+
+# salvar o primeiro numero do usuário
+number = input('''Olá trouxa! Você está prestes a entrar em meu jogo de advinhar.
+escreva um número e veja se você acertou ou se vc é fraco, digite "sair" ''')
+
+
+# Loop
+
+#criar opção para o usuário de sair do loop
+while True:
+    if number == "sair":
+        print(f'Desistiu? Fraco!')
+        break
+
+#tentar mudar o input de str para int, e tratar exceções
+    try:
+        number_int = int(number)
+    except ValueError:
+        print(f'É um numero, trouxa. Não isso aí kkkkkkkk')
+
+# condicionantes para sair ou continuar no loop
+    if number_int == magic_number:
+        print(f'Muito bem, trouxa! Você está livre agora.')
+        break
+    else:
+        print(f'{number_int}? Ha ha! Você está preso no meu loop!')
